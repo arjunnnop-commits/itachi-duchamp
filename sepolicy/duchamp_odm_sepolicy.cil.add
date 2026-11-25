@@ -1,0 +1,20 @@
+; Append to /odm/etc/selinux/odm_sepolicy.cil.  Type names are from the POCO X6 Pro vendor policy.
+; Bring-up tip: `setenforce 0`, reproduce, then read `dmesg | grep "avc: denied"` and extend.
+(type itachid_service)
+(roletype object_r itachid_service)
+(typeattributeset service_manager_type (itachid_service))
+
+(allow hal_fingerprint_default itachid_service (service_manager (add find)))
+(allow system_server itachid_service (service_manager (find)))
+(allow system_server hal_fingerprint_default (binder (call transfer)))
+(allow hal_fingerprint_default system_server (binder (call transfer)))
+
+; Talk to the Xiaomi extension / display feature services
+(allow hal_fingerprint_default vendor_hal_fingerprint_service_xiaomi (service_manager (find)))
+(allow hal_fingerprint_default vendor_hal_displayfeature_xiaomi_service (service_manager (find)))
+(allow hal_fingerprint_default vendor_hal_displayfeature_xiaomi_default (binder (call transfer)))
+
+; AOD / doze nodes
+(allow hal_fingerprint_default vendor_sysfs_graphics (file (getattr open read write)))
+(allow hal_fingerprint_default vendor_sysfs_displayfeature (dir (search)))
+(allow hal_fingerprint_default vendor_sysfs_displayfeature (file (getattr open read write)))

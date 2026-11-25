@@ -1,0 +1,2 @@
+# Run itachid in the same domain as mfp-daemon (it is allowed to talk to the Goodix HAL stack).
+/odm/bin/hw/itachid u:object_r:hal_fingerprint_default_exec:s0

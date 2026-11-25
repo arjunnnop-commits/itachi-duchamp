@@ -1,0 +1,19 @@
+# Oplus PackageManager features / properties that ColorOS SystemUI tests for FOD + AOD.
+# They normally live in my_product/etc/permissions/*.xml  (<feature name="..."/>) or
+# my_product/etc/extension/*.xml. Run tools/check_features.sh on your unpacked ROM to see which exist.
+oplus.software.display.aod_support
+oplus.software.display.fingerprint_disable_dimlayer
+oplus.hardware.fingerprint.unlock_without_icon.support
+oplus.aod.wakebyclick.support
+oplus.software.display.video_mode_aod_support
+oplus.software.display.video_mode_ramless_lhbm_aod_support
+oplus.software.display.aod_ramless_support
+oplus.software.display.lcd_aod_mode
+oplus.software.display.aod_prevent_burn_support
+oplus.software.display.aod_prevent_burn_new_mech
+oplus.software.fingerprint.shutter
+oplus.software.kgd.fp_delay_auth
+oplus.software.aon_aod_enable
+oplus.software.side_fingerprint
+oplus.software.fingerprint_face_combine_unlock
+oplus.software.display.mura_enhance_brightness_support

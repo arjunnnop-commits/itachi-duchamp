@@ -1,0 +1,6 @@
+service itachid /odm/bin/hw/itachid
+    class hal
+    user system
+    group system input graphics
+    # Bring-up: if the AOD/touch nodes are not writable by "system", either chown them here
+    # (on boot) or temporarily switch to "user root" and tighten later.

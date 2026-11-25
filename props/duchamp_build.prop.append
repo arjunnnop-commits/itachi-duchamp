@@ -1,0 +1,19 @@
+# Append to /odm/etc/build.prop (or the vendor build.prop you control).
+# Everything below was derived from this ROM's SystemUI / the HiOS vendor, not copied from anywhere.
+
+# --- FOD geometry read by ColorOS SystemUI (KeyguardFingerprintUtils.initFingerSizeProp) ---
+# sensor type: "optical" => udfps/FOD UI
+persist.vendor.fingerprint.sensor_type=optical
+# pressed-icon size in px (HiOS: persist.vendor.sys.fp.fod.size.width_height=210,210)
+persist.vendor.fingerprint.optical.iconsize=210
+# margin from the screen bottom to the icon, px.
+# HiOS gives the sensor top-left = 504,2332 and size 210 => bottom edge at 2542.
+# With a 1220x2712 panel: 2712 - 2542 = 170.  VERIFY with `wm size`, then adjust by eye.
+persist.vendor.fingerprint.optical.iconlocation=170
+# number of icon variants (UNVERIFIED, 1 is the safe default)
+persist.vendor.fingerprint.optical.iconnumber=1
+vendor.fingerprint.aidl.support=1
+
+# --- mfp-daemon (Goodix HAL) ---
+# String found in mfp-daemon; turns LHBM off right after the result (OPTIONAL, UNVERIFIED effect).
+persist.vendor.sys.fp.fod.lhbmoffafterresult=1

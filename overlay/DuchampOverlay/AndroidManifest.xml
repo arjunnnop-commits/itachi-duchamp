@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="duchamp.overlay.android">
+    <!-- Static RRO for the "android" package (framework-res). Install to /odm/overlay/. -->
+    <overlay
+        android:targetPackage="android"
+        android:priority="9999"
+        android:isStatic="true" />
+    <application android:hasCode="false" />
+</manifest>
