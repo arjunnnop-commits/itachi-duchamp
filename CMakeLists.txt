@@ -25,3 +25,4 @@ endif()
 target_compile_options(itachid PRIVATE -Wall -Wextra)
 # libbinder_ndk is a platform library; the NDK ships a link stub for API >= 29.
 target_link_libraries(itachid PRIVATE binder_ndk log)
+target_include_directories(itachid PRIVATE ${CMAKE_SOURCE_DIR}/src/compat)
