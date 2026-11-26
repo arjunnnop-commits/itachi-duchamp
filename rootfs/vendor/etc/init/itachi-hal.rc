@@ -1,0 +1,13 @@
+# ITACHI HAL for duchamp. (c) @yooitachiijod
+service vendor.itachi-hal /vendor/bin/hw/itachi-hal
+    class hal
+    user system
+    group system input graphics
+    # enable after the sepolicy step: seclabel u:r:itachi_hal:s0
+    interface aidl vendor.oplus.hardware.touch.IOplusTouch/default
+    interface aidl vendor.oplus.hardware.displaypanelfeature.IDisplayPanelFeature/default
+
+on boot
+    # let the HAL (user system) drive the touch IC and the panel doze node
+    chown system system /sys/class/mi_display/disp-DSI-0/doze_brightness
+    chmod 0660 /sys/class/mi_display/disp-DSI-0/doze_brightness

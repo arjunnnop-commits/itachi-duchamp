@@ -1,0 +1,4 @@
+# ===== ITACHI duchamp: append to system/build.prop =====
+ro.itachi.author=@yooitachiijod
+persist.vendor.fingerprint.optical.iconsize=210
+persist.vendor.fingerprint.optical.iconlocation=170

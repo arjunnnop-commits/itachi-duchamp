@@ -1,2 +1,3 @@
-build/
+itachi_private.key
+*.key.bak
 out/
